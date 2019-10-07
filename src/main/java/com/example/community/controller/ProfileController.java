@@ -36,21 +36,7 @@ public class ProfileController {
             model.addAttribute("section","replies");
             model.addAttribute("sectionName","我的回复");
         }
-        User user=null;
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String value = cookie.getValue();
-                    user = userMapper.findByToken(value);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                    break;
-                }
-
-            }
-        }
+        User user=(User)request.getSession().getAttribute("user");
         if (user == null) {
 //            request.getSession().setAttribute("error","用户未登录");
             model.addAttribute("error", "用户未登录");

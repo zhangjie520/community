@@ -2,10 +2,8 @@ package com.example.community.mapper;
 
 
 import com.example.community.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 @Mapper
 public interface UserMapper {
@@ -17,4 +15,10 @@ public interface UserMapper {
 
     @Select("select * from user where id=#{id}")
     User findById(@Param("id") Integer creator);
+
+    @Select("select * from user where account_id=#{accountId}")
+    User findByAccountId(@Param("accountId") String accountId);
+
+    @Update("update user set name=#{name},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl},token=#{token} ")
+    void update(User user);
 }

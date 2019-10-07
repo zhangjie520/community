@@ -27,26 +27,12 @@ public class IndexController {
     public String index(HttpServletRequest request, Model model,
                         @RequestParam(value = "page",defaultValue = "1") Integer pageIndex,
                         @RequestParam(value = "size",defaultValue = "2") Integer  size) {
-        Cookie[] cookies = request.getCookies();
-        User user=null;
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("token")) {
-                    String value = cookie.getValue();
-                    user = userMapper.findByToken(value);
-                    if (user != null) {
-                        request.getSession().setAttribute("user", user);
-                    }
-                    break;
-                }
-
-            }
-        }
-        if (user == null) {
-//            request.getSession().setAttribute("error","用户未登录");
-            model.addAttribute("error", "用户未登录");
-            return "redirect:/";
-        }
+//        User user=(User)request.getSession().getAttribute("user");
+//        if (user == null) {
+////            request.getSession().setAttribute("error","用户未登录");
+//            model.addAttribute("error", "用户未登录");
+//            return "index";
+//        }
         PaginationDTO paginationDTOS =questionService.list(pageIndex,size);
         model.addAttribute("paginationS",paginationDTOS);
         return "index";
