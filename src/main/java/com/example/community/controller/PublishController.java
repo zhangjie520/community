@@ -1,5 +1,6 @@
 package com.example.community.controller;
 
+import com.example.community.dto.QuestionDTO;
 import com.example.community.mapper.QuestionMapper;
 import com.example.community.mapper.UserMapper;
 import com.example.community.model.Question;
@@ -36,7 +37,7 @@ public class PublishController {
     public String doPublic(@RequestParam(value = "title", required = false) String title,
                            @RequestParam(value = "description", required = false) String description,
                            @RequestParam(value = "tag", required = false) String tag,
-                           @RequestParam(value = "id",required = false) Integer id,
+                           @RequestParam(value = "id",required = false) Long id,
                            HttpServletRequest request,
                            Model model) {
         model.addAttribute("title", title);
@@ -74,8 +75,8 @@ public class PublishController {
         return "redirect:/";
     }
     @GetMapping("/publish/{id}")
-    public String edit(@PathVariable("id") Integer id, Model model){
-        Question question=questionMapper.queryById(id);
+    public String edit(@PathVariable("id") Long id, Model model){
+        QuestionDTO question=questionService.queryById(id);
         model.addAttribute("title", question.getTitle());
         model.addAttribute("description", question.getDescription());
         model.addAttribute("tag", question.getTag());
