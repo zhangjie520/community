@@ -47,10 +47,12 @@ public class QuestionService {
         }
         paginationDTO.setTotalPage(totalPage);
         paginationDTO.setPagination(pageIndex);
-        paginationDTO.setQuestionDTOS(questionDTOS);
+        paginationDTO.setData(questionDTOS);
         //查询分页数据
         Integer offset=(pageIndex-1)*size;
-        List<Question> questions=questionMapper.selectByExampleWithRowbounds(new QuestionExample(),new RowBounds(offset,size));
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.setOrderByClause("gmt_create desc");
+        List<Question> questions=questionMapper.selectByExampleWithRowbounds(questionExample,new RowBounds(offset,size));
 
         for (Question question :
                 questions) {
@@ -87,7 +89,7 @@ public class QuestionService {
         }
         paginationDTO.setTotalPage(totalPage);
         paginationDTO.setPagination(pageIndex);
-        paginationDTO.setQuestionDTOS(questionDTOS);
+        paginationDTO.setData(questionDTOS);
 
         //查询分页数据
         Integer offset=(pageIndex-1)*size;
@@ -123,7 +125,10 @@ public class QuestionService {
             //新增
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
-            questionMapper.insertSelective(question);
+            question.setCommentCount(0);
+            question.setViewCount(0);
+            question.setLikeCount(0);
+            questionMapper.insert(question);
         }else {
             //更新
             Question updateQuestion=new Question();

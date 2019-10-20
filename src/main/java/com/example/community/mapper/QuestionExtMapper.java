@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface QuestionExtMapper {
    Integer incView(Question question);
-   Integer incCommentCount(Question question
-   );
+   Integer incCommentCount(Question question);
+   List<Question> selectRelated(Question question);
 
 }

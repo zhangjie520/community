@@ -26,7 +26,7 @@ public class IndexController {
     @GetMapping("/")
     public String index(HttpServletRequest request, Model model,
                         @RequestParam(value = "page",defaultValue = "1") Integer pageIndex,
-                        @RequestParam(value = "size",defaultValue = "2") Integer  size) {
+                        @RequestParam(value = "size",defaultValue = "5") Integer  size) {
 //        User user=(User)request.getSession().getAttribute("user");
 //        if (user == null) {
 ////            request.getSession().setAttribute("error","用户未登录");

@@ -9,6 +9,16 @@
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </head>
+<script>
+    window.onload=function (ev) {
+        // debugger;
+        var closable=window.localStorage.getItem("closable");
+        if (closable=="true"){
+            window.close();
+            window.localStorage.removeItem("closable");
+        }
+    }
+</script>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
 <div class="container-fluid main">
@@ -16,14 +26,16 @@
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <h2><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp发现</h2>
             <hr>
-            <div class="media" th:each="question : ${paginationS.questionDTOS}">
-                <div class="media-left media-middle">
+            <div class="media" th:each="question : ${paginationS.data}">
+                <div class="media-left">
                     <a href="#">
                         <img class="media-object" th:src="${question.user.avatarUrl}" alt="...">
                     </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading"><a th:href="@{'/question/'+${question.id}}"><span  th:text="${question.title}"></span></a></h4>
+                    <h4 class="media-heading">
+                        <a th:href="@{'/question/'+${question.id}}"><span  th:text="${question.title}"></span></a>
+                    </h4>
                     <span th:text="${question.description}"></span><br>
                     <span class="text-desc"><span th:text="${question.commentCount}"></span> 个回复 • <span th:text="${question.viewCount}"></span> 次浏览 • <span th:text="${#dates.format(question.gmtCreate,'dd MMM yyyy')}"></span></span>
                 </div>

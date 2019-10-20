@@ -1,5 +1,6 @@
 package com.example.community.controller;
 
+import com.example.community.cache.TagCache;
 import com.example.community.dto.QuestionDTO;
 import com.example.community.mapper.QuestionMapper;
 import com.example.community.mapper.UserMapper;
@@ -7,6 +8,7 @@ import com.example.community.model.Question;
 import com.example.community.model.User;
 import com.example.community.service.QuestionService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +31,8 @@ public class PublishController {
     QuestionService questionService;
 
     @GetMapping("/publish")
-    public String publish() {
+    public String publish(Model model) {
+        model.addAttribute("categories",TagCache.getCategory());
         return "publish";
     }
 
@@ -43,6 +46,7 @@ public class PublishController {
         model.addAttribute("title", title);
         model.addAttribute("description", description);
         model.addAttribute("tag", tag);
+        model.addAttribute("categories",TagCache.getCategory());
         if (title == null || title=="") {
             model.addAttribute("error", "问题标题不能为空");
             return "publish";
@@ -53,6 +57,10 @@ public class PublishController {
         }
         if (tag == null || tag=="") {
             model.addAttribute("error", "标签不能为空");
+            return "publish";
+        }
+        if (StringUtils.isNotBlank(TagCache.isValid(tag))){
+            model.addAttribute("error", "标签输入不合法");
             return "publish";
         }
 
@@ -77,9 +85,11 @@ public class PublishController {
     @GetMapping("/publish/{id}")
     public String edit(@PathVariable("id") Long id, Model model){
         QuestionDTO question=questionService.queryById(id);
+        model.addAttribute("id",question.getId());
         model.addAttribute("title", question.getTitle());
         model.addAttribute("description", question.getDescription());
         model.addAttribute("tag", question.getTag());
+        model.addAttribute("categories",TagCache.getCategory());
         return "publish";
     }
 }
