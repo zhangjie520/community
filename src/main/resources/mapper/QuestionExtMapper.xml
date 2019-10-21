@@ -40,7 +40,7 @@
     <select id="countBySearch" parameterType="com.example.community.dto.QuestionQueryDTO"
             resultType="java.lang.Integer">
         select
-        count (*)
+        count(*)
         from QUESTION
         <where>
             <if test="search!=null">
