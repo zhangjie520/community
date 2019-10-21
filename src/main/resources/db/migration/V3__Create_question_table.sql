@@ -6,8 +6,8 @@ CREATE TABLE question
     gmt_create long,
     gmt_modified long,
     creator bigint,
-    comment_count int,
-    view_count int,
-    like_count int,
+    comment_count int default 0,
+    view_count int default 0,
+    like_count int default 0,
     tag varchar(256)
 );
