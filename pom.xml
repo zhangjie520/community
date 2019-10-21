@@ -16,6 +16,29 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <!-- 1.开发环境 -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>application.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <!-- 4.生产环境 -->
+        <profile>
+            <id>product</id>
+            <build>
+                <filters>
+                    <filter>application-product.properties</filter>
+                </filters>
+            </build>
+        </profile>
+
+
     </properties>
 
     <dependencies>
@@ -104,9 +127,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>6.0.4</version>
                 <configuration>
-                    <url>jdbc:mysql://cdb-95pvxi6c.bj.tencentcdb.com:10216/community</url>
-                    <user>root</user>
-                    <password>zhangjie520</password>
+                    <url>${db.url}</url>
+                    <user>${db.user}</user>
+                    <password>${db.password}</password>
                 </configuration>
                 <dependencies>
                     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
