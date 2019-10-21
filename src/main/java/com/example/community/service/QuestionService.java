@@ -45,10 +45,14 @@ public class QuestionService {
         Integer totalCount=questionExtMapper.countBySearch(questionQueryDTO);
         //计算总页数
         Integer totalPage;
+
         if (totalCount%size==0){
             totalPage=totalCount/size;
-        }else {
-            totalPage=totalCount/size+1;
+        }else{
+            totalPage=(totalCount/size)+1;
+        }
+        if (totalCount==0){
+            totalPage=1;
         }
 
         //如果用户手动输入页码导致小于1或者大于最大页数，则显示最小最大页数数据
