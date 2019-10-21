@@ -103,11 +103,11 @@
                 <div class="media">
                     <div class="media-left media-middle">
                     <span>
-                        <img class="media-object" th:src="${question.user.avatarUrl}" alt="...">
+                        <img class="media-object" th:src="${session.user!=null?session.user.avatarUrl:'/images/default-avatar.png'}" alt="...">
                     </span>
                     </div>
                     <div class="media-body">
-                        <h5><span th:text="${question.user.name}"></span></h5>
+                        <h5><span th:text="${session.user!=null?session.user.name:'匿名用户'}"></span></h5>
                     </div>
                 </div>
                 <input type="hidden" id="question-id" th:value="${question.id}">
@@ -148,5 +148,6 @@
         </div>
     </div>
 </div>
+<div th:insert="~{footer :: foot}"></div>
 </body>
 </html>

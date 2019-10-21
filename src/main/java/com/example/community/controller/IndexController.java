@@ -26,15 +26,17 @@ public class IndexController {
     @GetMapping("/")
     public String index(HttpServletRequest request, Model model,
                         @RequestParam(value = "page",defaultValue = "1") Integer pageIndex,
-                        @RequestParam(value = "size",defaultValue = "5") Integer  size) {
+                        @RequestParam(value = "size",defaultValue = "5") Integer  size,
+                        @RequestParam(value = "search",required = false) String search) {
 //        User user=(User)request.getSession().getAttribute("user");
 //        if (user == null) {
 ////            request.getSession().setAttribute("error","用户未登录");
 //            model.addAttribute("error", "用户未登录");
 //            return "index";
 //        }
-        PaginationDTO paginationDTOS =questionService.list(pageIndex,size);
+        PaginationDTO paginationDTOS =questionService.list(search,pageIndex,size);
         model.addAttribute("paginationS",paginationDTOS);
+        model.addAttribute("search",search);
         return "index";
     }
 }

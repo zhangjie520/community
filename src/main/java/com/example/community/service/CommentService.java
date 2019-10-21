@@ -77,6 +77,9 @@ public class CommentService {
      * @param questionId
      */
     private void createNotification(Comment comment, Long receiver, Integer type, Long questionId) {
+        if (receiver==comment.getCommentor()){
+            return ;
+        }
         Notification notification = new Notification();
         notification.setNotifier(comment.getCommentor());
         notification.setReceiver(receiver);

@@ -6,6 +6,7 @@ import com.example.community.mapper.UserMapper;
 import com.example.community.model.User;
 import com.example.community.provider.GithubProvider;
 import com.example.community.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.info.GitProperties;
@@ -25,6 +26,7 @@ import java.util.UUID;
 
 //@SessionAttributes("user")
 @Controller
+@Slf4j
 public class AuthorizeController {
 
     @Value("${github.client.id}")
@@ -68,6 +70,7 @@ public class AuthorizeController {
 //            map.put("user",user);
             return "redirect:/";
         }else {
+            log.error("callback github error .{} ",githubUser);
             return "redirect:/";
         }
     }

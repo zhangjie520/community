@@ -1,5 +1,6 @@
 package com.example.community.mapper;
 
+import com.example.community.dto.QuestionQueryDTO;
 import com.example.community.model.Comment;
 import com.example.community.model.Question;
 import com.example.community.model.QuestionExample;
@@ -13,4 +14,7 @@ public interface QuestionExtMapper {
    Integer incCommentCount(Question question);
    List<Question> selectRelated(Question question);
 
+    Integer countBySearch(QuestionQueryDTO questionQueryDTO);
+
+    List<Question> selectBySearch(QuestionQueryDTO questionQueryDTO);
 }

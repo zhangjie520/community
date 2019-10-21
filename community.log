@@ -1,0 +1,87 @@
+2019-10-21 14:13:51.043  INFO 20552 --- [restartedMain] c.e.community.CommunityApplication       : Starting CommunityApplication on DESKTOP-VULSNIU with PID 20552 (D:\java\community\target\classes started by MAIBENBEN in D:\java\community)
+2019-10-21 14:13:51.043  INFO 20552 --- [restartedMain] c.e.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2019-10-21 14:13:51.335  INFO 20552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 14:13:51.336  INFO 20552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 14:13:51.337  INFO 20552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-21 14:13:51.364  INFO 20552 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-21 14:13:51.364  INFO 20552 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 319 ms
+2019-10-21 14:13:51.520  INFO 20552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 14:13:51.539  INFO 20552 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-21 14:13:51.684  INFO 20552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 14:13:51.701  INFO 20552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-21 14:13:51.701  INFO 20552 --- [restartedMain] c.e.community.CommunityApplication       : Started CommunityApplication in 0.731 seconds (JVM running for 813.711)
+2019-10-21 14:13:51.702  INFO 20552 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-21 14:13:51.703  INFO 20552 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-21 14:13:51.708  INFO 20552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-10-21 14:13:51.710  INFO 20552 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-10-21 14:13:51.711  INFO 20552 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-10-21 14:13:51.721  INFO 20552 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-10-21 14:13:51.723  WARN 20552 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.community.exception.CustomizeException: 您请求的问题不存在]
+2019-10-21 14:13:59.624  INFO 20552 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-21 14:13:59.624  INFO 20552 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2019-10-21 14:13:59.834  INFO 20552 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2019-10-21 14:14:00.957 ERROR 20552 --- [restartedMain] o.s.b.c.l.LoggingApplicationListener     : Cannot set level '' for 'com.example.community.mapper'
+2019-10-21 14:14:00.962  INFO 20552 --- [restartedMain] c.e.community.CommunityApplication       : Starting CommunityApplication on DESKTOP-VULSNIU with PID 20552 (D:\java\community\target\classes started by MAIBENBEN in D:\java\community)
+2019-10-21 14:14:00.962  INFO 20552 --- [restartedMain] c.e.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2019-10-21 14:14:01.233  INFO 20552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 14:14:01.234  INFO 20552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 14:14:01.234  INFO 20552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-21 14:14:01.249  INFO 20552 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-21 14:14:01.249  INFO 20552 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 283 ms
+2019-10-21 14:14:01.390  INFO 20552 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 14:14:01.404  INFO 20552 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-21 14:14:01.504  INFO 20552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 14:14:01.519  INFO 20552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-21 14:14:01.520  INFO 20552 --- [restartedMain] c.e.community.CommunityApplication       : Started CommunityApplication in 0.584 seconds (JVM running for 823.53)
+2019-10-21 14:14:01.520  INFO 20552 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-21 14:14:01.521  INFO 20552 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-21 14:14:01.523  INFO 20552 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-10-21 14:14:01.527  INFO 20552 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-10-21 14:14:01.529  INFO 20552 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2019-10-21 14:14:01.537  INFO 20552 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2019-10-21 14:14:01.539  WARN 20552 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.community.exception.CustomizeException: 您请求的问题不存在]
+2019-10-21 14:14:05.196  INFO 20552 --- [Thread-29] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-21 14:14:05.196  INFO 20552 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2019-10-21 14:14:08.685  INFO 23596 --- [restartedMain] c.e.community.CommunityApplication       : Starting CommunityApplication on DESKTOP-VULSNIU with PID 23596 (D:\java\community\target\classes started by MAIBENBEN in D:\java\community)
+2019-10-21 14:14:08.687  INFO 23596 --- [restartedMain] c.e.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2019-10-21 14:14:08.725  INFO 23596 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-10-21 14:14:08.725  INFO 23596 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-10-21 14:14:10.675  INFO 23596 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-21 14:14:10.708  INFO 23596 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-21 14:14:10.708  INFO 23596 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-21 14:14:10.847  INFO 23596 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-21 14:14:10.848  INFO 23596 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2122 ms
+2019-10-21 14:14:11.421  INFO 23596 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-21 14:14:11.478  INFO 23596 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-21 14:14:11.703  INFO 23596 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-10-21 14:14:11.750  INFO 23596 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-21 14:14:11.753  INFO 23596 --- [restartedMain] c.e.community.CommunityApplication       : Started CommunityApplication in 3.396 seconds (JVM running for 4.635)
+2019-10-21 14:16:02.124  INFO 23596 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-21 14:16:02.124  INFO 23596 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-21 14:16:02.129  INFO 23596 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-10-21 14:16:02.181  INFO 23596 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-21 14:16:02.283  INFO 23596 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-21 14:16:02.289 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count (*) from QUESTION 
+2019-10-21 14:16:02.301 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-10-21 14:16:02.312 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-10-21 14:16:02.315 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by GMT_CREATE desc limit ?,? 
+2019-10-21 14:16:02.317 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 5(Integer)
+2019-10-21 14:16:02.323 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.Q.selectBySearch                 : <==      Total: 5
+2019-10-21 14:16:02.323 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-10-21 14:16:02.325 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-10-21 14:16:02.325 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-10-21 14:16:02.329 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-10-21 14:16:02.329 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-10-21 14:16:02.329 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-10-21 14:16:02.330 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-10-21 14:16:02.330 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-10-21 14:16:02.331 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-10-21 14:16:02.332 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-10-21 14:16:02.332 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-10-21 14:16:02.333 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-10-21 14:16:02.333 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-10-21 14:16:02.334 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-10-21 14:16:02.334 DEBUG 23596 --- [http-nio-8080-exec-1] c.e.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-10-21 14:17:41.991  INFO 23596 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-21 14:17:41.993  INFO 23596 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-21 14:17:42.206  INFO 23596 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
