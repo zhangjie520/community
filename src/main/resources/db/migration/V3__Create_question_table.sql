@@ -1,6 +1,6 @@
-CREATE TABLE question
+create table question
 (
-    id bigint AUTO_INCREMENT PRIMARY KEY,
+    id bigint auto_increment primary key,
     title varchar(50),
     description text,
     gmt_create long,
