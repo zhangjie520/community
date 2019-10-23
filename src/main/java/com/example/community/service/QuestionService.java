@@ -31,7 +31,7 @@ public class QuestionService {
     @Resource
     private UserMapper userMapper;
 
-    public PaginationDTO list(String search,Integer pageIndex, Integer size) {
+    public PaginationDTO list(String search,String tag,Integer pageIndex, Integer size) {
         List<QuestionDTO> questionDTOS=new ArrayList<>();
         PaginationDTO paginationDTO=new PaginationDTO();
         if (StringUtils.isNotBlank(search)){
@@ -41,6 +41,7 @@ public class QuestionService {
 
         QuestionQueryDTO questionQueryDTO=new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
+        questionQueryDTO.setTag(tag);
 
         Integer totalCount=questionExtMapper.countBySearch(questionQueryDTO);
         //计算总页数

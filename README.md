@@ -2,6 +2,7 @@
 这是一个基于springboot开发的社区上线项目
 ## 使用
 通过application进入程序
+zyy512zht
 ## 文档
 [thymeleaf] https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values
 [springboot文档] https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#boot-features-embedded-database-support
