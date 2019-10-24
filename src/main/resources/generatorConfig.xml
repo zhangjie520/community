@@ -10,6 +10,10 @@
                         connectionURL="jdbc:mysql://cdb-95pvxi6c.bj.tencentcdb.com:10216/community"
                         userId="root"
                         password="zhangjie520">
+
+            <!--MySQL 不支持 schema 或者 catalog 所以需要添加这个-->
+            <!--参考 : http://www.mybatis.org/generator/usage/mysql.html-->
+            <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
 
         <javaTypeResolver >
@@ -30,7 +34,9 @@
         </javaClientGenerator>
 
         <table tableName="user" domainObjectName="User" ></table>
-        <table tableName="question" domainObjectName="Question" ></table>
+        <table tableName="question" domainObjectName="Question" >
+            <columnOverride column="description" jdbcType="varchar" ></columnOverride>
+        </table>
         <table tableName="comment" domainObjectName="Comment" ></table>
         <table tableName="notification" domainObjectName="Notification" ></table>
         <table tableName="ad" domainObjectName="Ad" ></table>
