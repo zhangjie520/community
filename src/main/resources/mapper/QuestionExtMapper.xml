@@ -44,7 +44,7 @@
         from QUESTION
         <where>
             <if test="search!=null">
-                title regexp #{search}
+                and title regexp #{search}
             </if>
             <if test="tag!=null">
                 and tag regexp #{tag}

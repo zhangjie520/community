@@ -9,13 +9,9 @@ import com.example.community.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.info.GitProperties;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.context.support.HttpRequestHandlerServlet;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
@@ -35,9 +31,6 @@ public class AuthorizeController {
     private String clientSecret;
     @Value("${github.redirect.uri}")
     private String redirectUri;
-
-    @Resource
-    private UserMapper userMapper;
     @Autowired
     private UserService userService;
 

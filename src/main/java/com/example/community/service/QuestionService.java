@@ -40,9 +40,14 @@ public class QuestionService {
         }
 
         QuestionQueryDTO questionQueryDTO=new QuestionQueryDTO();
+        if (StringUtils.isBlank(search)){
+            search=null;
+        }
+        if (StringUtils.isBlank(tag)){
+            tag=null;
+        }
         questionQueryDTO.setSearch(search);
         questionQueryDTO.setTag(tag);
-
         Integer totalCount=questionExtMapper.countBySearch(questionQueryDTO);
         //计算总页数
         Integer totalPage;

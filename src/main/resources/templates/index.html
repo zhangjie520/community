@@ -53,7 +53,7 @@
                             <span aria-hidden="true">&lt;</span>
                         </a>
                     </li>
-                    <li th:each="page : ${paginationS.pages}" th:class="${paginationS.currentPage==page}? 'active' : ''"><a th:href="@{/(page=${page},search=${search})}" th:text="${page}"></a></li>
+                    <li th:each="page : ${paginationS.pages}" th:class="${paginationS.currentPage==page}? 'active' : ''"><a th:href="@{/(page=${page},search=${search},tag=${tag})}" th:text="${page}"></a></li>
                     <li  th:if="${paginationS.showNext}">
                         <a th:href="@{/(page=${paginationS.currentPage}+1,search=${search},tag=${tag})}" aria-label="Next">
                             <span aria-hidden="true">&gt;</span>

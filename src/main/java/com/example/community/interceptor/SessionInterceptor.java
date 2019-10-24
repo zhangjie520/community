@@ -1,9 +1,11 @@
 package com.example.community.interceptor;
 
+import com.example.community.mapper.AdMapper;
 import com.example.community.mapper.NotificationMapper;
 import com.example.community.mapper.UserMapper;
 import com.example.community.model.User;
 import com.example.community.model.UserExample;
+import com.example.community.service.AdService;
 import com.example.community.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,9 +24,12 @@ public class SessionInterceptor implements HandlerInterceptor {
     private UserMapper userMapper;
     @Autowired
     private NotificationService notificationService;
+    @Autowired
+    private AdService adService;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
+        request.getServletContext().setAttribute("ads",adService.list());
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("token")) {
