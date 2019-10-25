@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="side">
+    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
+        <h3>相关网站</h3>
+        <h4 style="margin-top: 20px"><a href="https://v3.bootcss.com/components/">bootstrap中文网</a></h4>
+        <h4 style="margin-top: 10px"><a href="https://elasticsearch.cn/">elastic官网</a></h4>
+        <hr>
+        <h4>热门话题</h4>
+        <ul class="question-related">
+            <li  th:each="hotTag:${hotTags}">
+                <a th:href="@{/(page=1,search=${search},tag=${hotTag})}" th:text="${hotTag}"></a>
+            </li>
+        </ul>
+
+        <div th:each="side:${#request.getServletContext().getAttribute('SIDE')}" th:if="${#lists.size(#request.getServletContext().getAttribute('SIDE'))!=0}" style="margin-top: 30px">
+            <h4 th:text="${side.title}"></h4>
+            <a th:href="${side.url}" class="img-thumbnail">
+                <img th:src="${side.img}" alt="">
+            </a>
+        </div>
+        <div th:each="side:${#request.getServletContext().getAttribute('SIDE')}" th:if="${#lists.size(#request.getServletContext().getAttribute('SIDE'))==0}" style="margin-top: 30px">
+            <h4 th:text="${side.title}"></h4>
+            <a th:href="${side.url}" class="img-thumbnail">
+                <img th:src="${side.img}" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

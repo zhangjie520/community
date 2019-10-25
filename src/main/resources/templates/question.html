@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>社区</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/publish.css">
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="/css/editormd.preview.min.css" />
+    <!--<link rel="stylesheet" href="/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="/css/index.css">-->
+    <!--<link rel="stylesheet" href="/css/publish.css">-->
+    <!--<link rel="stylesheet" href="/css/bootstrap-theme.min.css">-->
+    <!--<link rel="stylesheet" href="/css/editormd.preview.min.css" />-->
 
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/question.js"></script>
-    <script src="/js/moment.js"></script>
+    <!--<script src="/js/jquery-3.4.1.min.js"></script>-->
+    <!--<script src="/js/bootstrap.min.js"></script>-->
+    <!--<script src="/js/question.js"></script>-->
+    <!--<script src="/js/moment.js"></script>-->
 
-    <script src="/js/editormd.min.js"></script>
-    <script src="/js/lib/marked.min.js"></script>
-    <script src="/js/lib/prettify.min.js"></script>
+    <!--<script src="/js/editormd.min.js"></script>-->
+    <!--<script src="/js/lib/marked.min.js"></script>-->
+    <!--<script src="/js/lib/prettify.min.js"></script>-->
+    <head  th:insert="~{import :: head}"></head>
+    <head  th:insert="~{import :: markdown}"></head>
+
     <script type="text/javascript">
         $(function() {
             var testView = editormd.markdownToHTML("question-view", {
@@ -43,8 +46,28 @@
                 阅读数 <span th:text="${question.viewCount}"></span>
             </span>
                 <hr>
+                    <div th:each="ad:${#request.getServletContext().getAttribute('HEADER')}" th:if="${#lists.size(#request.getServletContext().getAttribute('HEADER'))!=0}">
+                        <a th:href="${ad.url}"  target="_blank">
+                            <img th:src="${ad.img}"  class="img-thumbnail" alt="">
+                        </a>
+                    </div>
+                <div th:each="ad:${#request.getServletContext().getAttribute('HEADER')}" th:if="${#lists.size(#request.getServletContext().getAttribute('HEADER'))==0}">
+                    <a th:href="${ad.url}"  target="_blank">
+                        <img th:src="${ad.img}"  class="img-thumbnail" alt="">
+                    </a>
+                </div>
                 <div id="question-view" >
                     <textarea style="display:none;" th:text="${question.description}"></textarea>
+                </div>
+                <div th:each="ad:${#request.getServletContext().getAttribute('FOOTER')}" th:if="${#lists.size(#request.getServletContext().getAttribute('FOOTER'))!=0}">
+                    <a th:href="${ad.url}"  target="_blank">
+                        <img th:src="${ad.img}" class="img-thumbnail" alt="">
+                    </a>
+                </div>
+                <div th:each="ad:${#request.getServletContext().getAttribute('FOOTER')}" th:if="${#lists.size(#request.getServletContext().getAttribute('FOOTER'))==0}">
+                    <a th:href="${ad.url}"  target="_blank">
+                        <img th:src="${ad.img}" class="img-thumbnail" alt="">
+                    </a>
                 </div>
                 <hr>
                 <div class="label label-info label-margin" th:each="tag:${question.tag.split(',')}">

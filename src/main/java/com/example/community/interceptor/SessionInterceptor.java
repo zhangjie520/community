@@ -1,5 +1,6 @@
 package com.example.community.interceptor;
 
+import com.example.community.enums.AdPosEnum;
 import com.example.community.mapper.AdMapper;
 import com.example.community.mapper.NotificationMapper;
 import com.example.community.mapper.UserMapper;
@@ -29,7 +30,10 @@ public class SessionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Cookie[] cookies = request.getCookies();
-        request.getServletContext().setAttribute("ads",adService.list());
+        for (AdPosEnum adPosEnum : AdPosEnum.values()) {
+            request.getServletContext().setAttribute(adPosEnum.name(),adService.list(adPosEnum.name()));
+        }
+
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("token")) {
