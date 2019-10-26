@@ -103,4 +103,10 @@ body {
 .publish-tag-tab .tab-pane{
     margin-top: 10px;
 }
+.video{
+    padding:20px;
+}
+.video img{
+    width: 100%;
+}
 
