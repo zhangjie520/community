@@ -9,6 +9,7 @@ import com.example.community.model.UserExample;
 import com.example.community.service.AdService;
 import com.example.community.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,8 +28,14 @@ public class SessionInterceptor implements HandlerInterceptor {
     private NotificationService notificationService;
     @Autowired
     private AdService adService;
+    @Value("${github.redirect.uri}")
+    private String redirectUri;
+    @Value("${github.client.id}")
+    private String clientId;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        request.getServletContext().setAttribute("redirectUri",redirectUri);
+        request.getServletContext().setAttribute("clientId",clientId);
         Cookie[] cookies = request.getCookies();
         for (AdPosEnum adPosEnum : AdPosEnum.values()) {
             request.getServletContext().setAttribute(adPosEnum.name(),adService.list(adPosEnum.name()));

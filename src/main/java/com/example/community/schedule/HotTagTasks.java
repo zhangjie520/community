@@ -19,7 +19,8 @@ public class HotTagTasks {
     private QuestionMapper questionMapper;
     @Autowired
     private HotTagCache hotTagCache;
-    @Scheduled(fixedRate = 10000)
+//    @Scheduled(fixedRate = 10000)
+    @Scheduled(cron = "0 0 23 * * ?")
     public void reportCurrentTime(){
         int offset=0;
         int limit=5;
