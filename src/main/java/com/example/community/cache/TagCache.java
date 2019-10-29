@@ -26,7 +26,8 @@ public class TagCache {
         tagDTOS.add(server);
         return tagDTOS;
     }
-    public static String isValid(String inputTag){
+
+    public static String isValid(String inputTag) {
         String[] inputTags = inputTag.split(",");
         List<TagDTO> tagDTOS = TagCache.getCategory();
         List<String> tags = tagDTOS.stream().flatMap(tagDTO -> tagDTO.getTags().stream()).collect(Collectors.toList());

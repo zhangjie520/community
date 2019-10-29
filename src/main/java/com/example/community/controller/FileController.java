@@ -19,10 +19,11 @@ import java.io.IOException;
 public class FileController {
     @Autowired
     private QcloudProvider qcloudProvider;
+
     @RequestMapping("/file/upload")
     @ResponseBody
     public Object upload(HttpServletRequest request) {
-        MultipartHttpServletRequest multipartRequest=(MultipartHttpServletRequest) request;
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile file = multipartRequest.getFile("editormd-image-file");
         String fileUrl = null;
         try {

@@ -36,12 +36,13 @@ public class AuthorizeController {
 
     @Autowired
     private GithubProvider githubProvider;
+
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
                            @RequestParam(name = "state") String state,
-                           Map<String , Object> map,
+                           Map<String, Object> map,
                            HttpServletRequest request,
-                           HttpServletResponse response){
+                           HttpServletResponse response) {
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setClient_id(clientId);
         accessTokenDTO.setClient_secret(clientSecret);
@@ -49,10 +50,10 @@ public class AuthorizeController {
         accessTokenDTO.setRedirect_uri(redirectUri);
         accessTokenDTO.setState(state);
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
-        log.error("callback accessToken error .{} ",accessToken);
+        log.error("callback accessToken error .{} ", accessToken);
         GithubUser githubUser = githubProvider.getUser(accessToken);
-        log.error("callback github error .{} ",githubUser);
-        if (githubUser!=null){
+        log.error("callback github error .{} ", githubUser);
+        if (githubUser != null) {
             User user = new User();
             user.setToken(UUID.randomUUID().toString());
             user.setName(githubUser.getName());
@@ -60,19 +61,20 @@ public class AuthorizeController {
             user.setAvatarUrl(githubUser.getAvatarUrl());
             userService.createOrUpdate(user);
 //            this.userMapper.insert(user);
-            response.addCookie(new Cookie("token",user.getToken()));
-            request.getSession().setAttribute("user",user);
+            response.addCookie(new Cookie("token", user.getToken()));
+            request.getSession().setAttribute("user", user);
 //            map.put("user",user);
             return "redirect:/";
-        }else {
-            log.error("callback github error .{} ",githubUser);
+        } else {
+            log.error("callback github error .{} ", githubUser);
             return "redirect:/";
         }
     }
+
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request,HttpServletResponse response){
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
         request.getSession().removeAttribute("user");
-        Cookie cookie = new Cookie("token",null);
+        Cookie cookie = new Cookie("token", null);
         cookie.setMaxAge(0);
         response.addCookie(cookie);
         return "redirect:/";
